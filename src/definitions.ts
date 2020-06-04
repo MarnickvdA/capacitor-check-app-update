@@ -1,9 +1,9 @@
 declare global {
   interface PluginRegistry {
-    CheckAppUpdatePlugin?: CheckAppUpdateInterface;
+    CheckAppUpdatePlugin?: CheckAppUpdate;
   }
 }
 
-export interface CheckAppUpdateInterface {
+export interface CheckAppUpdate {
   canUpdate(): Promise<{value: boolean}>;
 }
