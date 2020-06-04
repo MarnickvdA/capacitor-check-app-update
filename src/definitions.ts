@@ -1,6 +1,6 @@
-declare module "@capacitor/core" {
+declare global {
   interface PluginRegistry {
-    CheckAppUpdatePlugin: CheckAppUpdateInterface;
+    CheckAppUpdatePlugin?: CheckAppUpdateInterface;
   }
 }
 
