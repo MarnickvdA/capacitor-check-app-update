@@ -1,6 +1,6 @@
 {
   "name": "capacitor-check-app-update",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Checks the App and Play store for app updates",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
