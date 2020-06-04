@@ -3,13 +3,13 @@ _Check the App and Play store for app updates!_
 
 ### Installation
 ```shell script
-npm install capacitor-check-app-update
+npm install --save @abitofsoftware/capacitor-check-app-update
 ```
 
 #### Android
 Add the plugin to the MainActivity in the Android project
 ```
-import com.abitofsoftware.capacitorappupdate.CheckAppUpdate;
+import com.abitofsoftware.checkappupdate.CheckAppUpdatePlugin;
 
 public class MainActivity extends BridgeActivity {
   @Override
@@ -19,7 +19,7 @@ public class MainActivity extends BridgeActivity {
     // Initializes the Bridge
     this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
       // Additional plugins you've installed go here
-      add(AppUpdate.class);
+      add(CheckAppUpdatePlugin.class);
     }});
   }
 }
@@ -27,12 +27,10 @@ public class MainActivity extends BridgeActivity {
 
 ### Usage
 ```angularjs
-import { Plugins } from '@capacitor/core';
+import {CheckAppUpdate} from "@abitofsoftware/capacitor-check-app-update";
+const checkAppUpdate = new CheckAppUpdate();
 
-const { CheckAppUpdate } = Plugins;
-
-
-CheckAppUpdate.canUpdate()
+checkAppUpdate.canUpdate()
     .then({value: boolean} => {
         if(value) {
             // ... prompt user to update

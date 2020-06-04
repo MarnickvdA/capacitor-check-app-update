@@ -3,6 +3,9 @@
 android/build
 android/capacitor-firebase-auth.iml
 ios/Pods/
+ios/Plugin.xcodeproj/xcuserdata/
+ios/Plugin.xcworkspace/xcshareddata/
+ios/Plugin.xcworkspace/xcuserdata/
 
 # dependencies
 /node_modules
@@ -15,6 +18,8 @@ ios/Pods/
 *.launch
 .settings/
 *.sublime-workspace
+local.properties
+.gradle
 
 # IDE - VSCode
 .vscode/*

@@ -1,7 +1,7 @@
 
   Pod::Spec.new do |s|
     s.name = 'CapacitorCheckAppUpdate'
-    s.version = '1.0.1'
+    s.version = '1.0.2'
     s.summary = 'Checks the App and Play store for app updates'
     s.license = 'MIT'
     s.homepage = 'https://github.com/MarnickvdA/capacitor-check-app-update.git'
