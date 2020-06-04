@@ -15,7 +15,7 @@ import com.google.android.play.core.tasks.OnSuccessListener;
 import com.google.android.play.core.tasks.Task;
 
 @NativePlugin()
-public class CheckAppUpdate extends Plugin {
+public class CheckAppUpdatePlugin extends Plugin {
 
     @PluginMethod()
     public void canUpdate(final PluginCall call) {

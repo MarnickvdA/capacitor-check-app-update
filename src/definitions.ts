@@ -1,9 +1,9 @@
 declare module "@capacitor/core" {
   interface PluginRegistry {
-    CheckAppUpdate: CheckAppUpdatePlugin;
+    CheckAppUpdatePlugin: CheckAppUpdateInterface;
   }
 }
 
-export interface CheckAppUpdatePlugin {
+export interface CheckAppUpdateInterface {
   canUpdate(): Promise<{value: boolean}>;
 }

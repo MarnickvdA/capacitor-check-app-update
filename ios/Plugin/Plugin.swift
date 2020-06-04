@@ -5,8 +5,8 @@ import Capacitor
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitor.ionicframework.com/docs/plugins/ios
  */
-@objc(CheckAppUpdate)
-public class CheckAppUpdate: CAPPlugin {
+@objc(CheckAppUpdatePlugin)
+public class CheckAppUpdatePlugin: CAPPlugin {
     
     @objc func canUpdate(_ call: CAPPluginCall) {
         _ = try? isUpdateAvailable { (update, error) in
