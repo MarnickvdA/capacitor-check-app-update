@@ -4,7 +4,7 @@ import {CheckAppUpdateInterface} from "./definitions";
 const {CheckAppUpdatePlugin} = Plugins;
 
 export class CheckAppUpdate implements CheckAppUpdateInterface {
-    canUpdate(): Promise<{value: boolean}> {
-        return CheckAppUpdatePlugin.canUpdate();
+    canUpdate(options: { locale: string }): Promise<{value: boolean}> {
+        return CheckAppUpdatePlugin.canUpdate(options);
     }
 }

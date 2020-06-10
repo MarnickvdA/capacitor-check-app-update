@@ -5,10 +5,13 @@ import Capacitor
 public class CheckAppUpdate: CAPPlugin {
     
     @objc func canUpdate(_ call: CAPPluginCall) {
+
+        let locale = call.getString("locale") ?? ""
+
         guard let info = Bundle.main.infoDictionary,
             let currentVersion = info["CFBundleShortVersionString"] as? String,
             let identifier = info["CFBundleIdentifier"] as? String,
-            let url = URL(string: "http://itunes.apple.com/lookup?bundleId=\(identifier)") else {
+            let url = URL(string: "http://itunes.apple.com/\(locale)/lookup?bundleId=\(identifier)") else {
                 call.reject("Invalid Bundle Info provided");
                 return;
         }

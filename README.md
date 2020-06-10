@@ -25,15 +25,20 @@ public class MainActivity extends BridgeActivity {
 }
 ```
 
+### iOS
+If your app is only available in certain countries, you should add the (generic) locale option (e.g. Netherlands = `'nl'`)'.
+
 ### Usage
 ```angularjs
 import {CheckAppUpdate} from "@abitofsoftware/capacitor-check-app-update";
 const checkAppUpdate = new CheckAppUpdate();
 
-checkAppUpdate.canUpdate()
-    .then({value: boolean} => {
-        if(value) {
-            // ... prompt user to update
-        }    
-    })
+checkAppUpdate.canUpdate({locale: 'nl'}) // Only fill in the locale if necessary as mentioned in the docs.
+        .then((updateAvailable) => {
+          if (updateAvailable.value) {
+            console.log('Update available!');
+          } else {
+            console.log('No update available');
+          }
+        });
 ```

@@ -5,5 +5,5 @@ declare module "@capacitor/core" {
 }
 
 export interface CheckAppUpdateInterface {
-  canUpdate(): Promise<{value: boolean}>;
+  canUpdate(options: { locale: string }): Promise<{value: boolean}>;
 }
