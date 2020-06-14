@@ -1,8 +1,8 @@
 {
   "name": "@abitofsoftware/capacitor-check-app-update",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Checks the App and Play store for app updates",
-  "homepage": "https://github.com/MarnickvdA/capacitor-check-app-update.git",
+  "homepage": "https://github.com/abitofsoftware/capacitor-check-app-update.git",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "scripts": {
@@ -46,9 +46,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MarnickvdA/capacitor-check-app-update.git"
+    "url": "https://github.com/abitofsoftware/capacitor-check-app-update.git"
   },
   "bugs": {
-    "url": "https://github.com/MarnickvdA/capacitor-check-app-update.git/issues"
+    "url": "https://github.com/abitofsoftware/capacitor-check-app-update.git/issues"
   }
 }
