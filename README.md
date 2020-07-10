@@ -1,44 +1,121 @@
-# Capacitor Check App Update
-_Check the App and Play store for app updates!_
+<p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
+<h3 align="center">Capacitor Date Picker</h3>
+<p align="center"><strong><code>@abitofsoftware/capacitor-check-app-update</code></strong></p>
+<p align="center">
+  Capacitor plugin to check for app updates in the App/Play store
+</p>
 
-### Installation
-```shell script
-npm install --save @abitofsoftware/capacitor-check-app-update
+<p align="center">
+  <img src="https://img.shields.io/maintenance/yes/2020?style=flat-square" />
+  <a href="https://www.npmjs.com/package/@abitofsoftware/capacitor-check-app-update"><img src="https://img.shields.io/npm/l/@abitofsoftware/capacitor-check-app-update?style=flat-square" /></a>
+<br>
+  <a href="https://www.npmjs.com/package/@abitofsoftware/capacitor-check-app-update"><img src="https://img.shields.io/npm/dw/@abitofsoftware/capacitor-check-app-update?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@abitofsoftware/capacitor-check-app-update"><img src="https://img.shields.io/npm/v/@abitofsoftware/capacitor-check-app-update?style=flat-square" /></a>
+  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+<a href="#contributors"><img src="https://img.shields.io/badge/all%20contributors-1-orange?style=flat-square" /></a>
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+</p>
+
+## Maintainers
+
+| Maintainer   | GitHub                                | Social                                          |
+| ------------ | ------------------------------------- | ----------------------------------------------- |
+| Marnick van der Arend | [MarnickvdA](https://github.com/marnickvda) | - |
+
+## Notice 🚀
+
+This plugin only works for production builds.
+
+## Installation
+
+Using npm:
+
+```bash
+npm install @abitofsoftware/capacitor-check-app-update
 ```
 
-#### Android
-Add the plugin to the MainActivity in the Android project
-```
-import com.abitofsoftware.checkappupdate.CheckAppUpdatePlugin;
+Sync native files:
 
-public class MainActivity extends BridgeActivity {
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-
-    // Initializes the Bridge
-    this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
-      // Additional plugins you've installed go here
-      add(CheckAppUpdatePlugin.class);
-    }});
-  }
-}
+```bash
+npx cap sync
 ```
 
-### iOS
-If your app is only available in certain countries, you should add the (generic) locale option (e.g. Netherlands = `'nl'`)'.
+Check App Updates for iOS and Android
 
-### Usage
-```angularjs
+> work in progress
+
+## Roadmap
+
+### ios
+
+- [x] canUpdate
+
+### android
+
+- [x] canUpdate
+
+### web
+
+- [ ] canUpdate
+
+## API
+
+- `canUpdate({locale:string}): Promise<{ value:string }>`
+
+## Usage
+
+```js
 import {CheckAppUpdate} from "@abitofsoftware/capacitor-check-app-update";
 const checkAppUpdate = new CheckAppUpdate();
 
-checkAppUpdate.canUpdate({locale: 'nl'}) // Only fill in the locale if necessary as mentioned in the docs.
-        .then((updateAvailable) => {
-          if (updateAvailable.value) {
-            console.log('Update available!');
-          } else {
-            console.log('No update available');
-          }
-        });
+if(ENV.production) {
+  checkAppUpdate.canUpdate({locale: 'nl'})
+          .then((updateAvailable) => {
+            if (updateAvailable.value) {
+              console.log('Update available!');
+            } else {
+              console.log('No update available');
+            }
+          });
+}
 ```
+
+## iOS setup
+
+- `ionic start my-cap-app --capacitor`
+- `cd my-cap-app`
+- `npm install --save @abitofsoftware/capacitor-check-app-update`
+- `mkdir www && touch www/index.html`
+- `sudo gem install cocoapods` (only once)
+- `npx cap add ios`
+- `npx cap sync ios` (every time you run `npm install`)
+- `npx cap open ios`
+
+> Tip: every time you change a native code you may need to clean up the cache (Product > Clean build folder) and then run the app again.
+
+## Android setup
+
+- `ionic start my-cap-app --capacitor`
+- `cd my-cap-app`
+- `npm install --save @abitofsoftware/capacitor-check-app-update`
+- `mkdir www && touch www/index.html`
+- `npx cap add android`
+- `npx cap sync android` (every time you run `npm install`)
+- `npx cap open android`
+- `[extra step]` in android case we need to tell Capacitor to initialise the plugin:
+
+> on your `MainActivity.java` file add `import com.abitofsoftware.checkappupdate.CheckAppUpdatePlugin;` and then inside the init callback `add(CheckAppUpdatePlugin.class);`
+
+Now you should be set to go. Try to run your client using `ionic cap run android --livereload --address=0.0.0.0`.
+
+> Tip: every time you change a native code you may need to clean up the cache (Build > Clean Project | Build > Rebuild Project) and then run the app again.
+
+## Updating
+
+For existing projects you can upgrade all capacitor related packages (including this plugin) with this single command
+
+`npx npm-upgrade '*capacitor*' && npm install`
+
+## License
+
+MIT
