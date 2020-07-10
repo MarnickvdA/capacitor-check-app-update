@@ -1,5 +1,4 @@
-<p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
-<h3 align="center">Capacitor Date Picker</h3>
+<h3 align="center">Capacitor Check App Update</h3>
 <p align="center"><strong><code>@abitofsoftware/capacitor-check-app-update</code></strong></p>
 <p align="center">
   Capacitor plugin to check for app updates in the App/Play store
